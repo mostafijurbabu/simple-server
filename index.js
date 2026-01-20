@@ -116,6 +116,4 @@ app.post("/items", (req, res) => {
   res.status(201).json(newItem);
 });
 
-app.listen(4000, () =>
-  console.log("Express API running on http://localhost:4000"),
-);
+module.exports = app;
