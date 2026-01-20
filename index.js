@@ -16,79 +16,11 @@ const items = [
     price: 30000,
     image: "https://via.placeholder.com/300",
   },
-  {
-    id: 3,
-    name: "Headphones",
-    description: "Noise-cancelling headphones",
-    price: 5000,
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    id: 4,
-    name: "Smartwatch",
-    description: "Fitness tracking smartwatch",
-    price: 7000,
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    id: 5,
-    name: "Tablet",
-    description: "10-inch display tablet",
-    price: 20000,
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    id: 6,
-    name: "Camera",
-    description: "Digital SLR camera",
-    price: 40000,
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    id: 7,
-    name: "Printer",
-    description: "Wireless color printer",
-    price: 8000,
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    id: 8,
-    name: "Router",
-    description: "High-speed WiFi router",
-    price: 3000,
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    id: 9,
-    name: "Monitor",
-    description: "24-inch HD monitor",
-    price: 12000,
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    id: 10,
-    name: "Keyboard",
-    description: "Mechanical keyboard",
-    price: 3500,
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    id: 11,
-    name: "Mouse",
-    description: "Wireless optical mouse",
-    price: 1500,
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    id: 12,
-    name: "External Hard Drive",
-    description: "1TB portable hard drive",
-    price: 6000,
-    image: "https://via.placeholder.com/300",
-  },
 ];
 
 const app = express();
+const PORT = process.env.PORT || 4000;
+
 app.use(cors());
 app.use(express.json());
 
@@ -116,4 +48,6 @@ app.post("/items", (req, res) => {
   res.status(201).json(newItem);
 });
 
-module.exports = app;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
